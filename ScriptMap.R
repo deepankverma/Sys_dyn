@@ -9,7 +9,7 @@ library(ggplot2)
 ## p + geom_point()
 
 # Fortifying with a2, Map showing according to a1
-map1.f <-fortify(map1, region = "area")
+map1.f <-fortify(map1, region = "area")*9
 map1.f <-merge(map1.f, map1@data, by.x = "id", by.y = "area")
 head (map1.f)
 finalmap <-ggplot(map1.f, aes(long, lat, group=group, fill= Zone_no_))+geom_polygon()+coord_equal()
@@ -62,6 +62,8 @@ df1[13,1] = "13"
 df1[14,1] = "14"
 
 df1
+
+write.table(df1, file = "builtproj.csv",row.names=FALSE, na="",col.names=TRUE, sep=",",quote=TRUE)
 ### end extracting data
 
 # for joining one field has to be the same as in shapefile
