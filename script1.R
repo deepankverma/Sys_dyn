@@ -1,6 +1,6 @@
 library(XLConnect)
 
-df <- readWorksheetFromFile("export.xls",header = FALSE, sheet = 1, startRow = 30, endRow = 43)
+df <- readWorksheetFromFile("export.xls",header = FALSE, sheet = 1, startRow = 31, endRow = 44)
 df
 
 df1 <- t(df)
